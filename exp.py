@@ -55,7 +55,6 @@ def main(dataset, dimZ, hidden_layers, n_iters, learning_rate = 0.0005, \
     checkpoint += 1
 
     num_iter_trained = 0
-    source = 's'	# only source data
     print "Training..."
     for n_iter in n_iters:
         fit(sess, data_train, n_iter, learning_rate)
