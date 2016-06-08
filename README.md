@@ -21,7 +21,7 @@ Frey Face (https://github.com/y0ast/Variational-Autoencoder/blob/master/freyface
 
 and include all the data files in directory data/freyface/
 
-To have a quick test (IWAE), run 
+To have a quick test, run 
 
 python exp.py --data [dataset name] --alpha [alpha value] -k [num of samples] --dimZ [dimension of the latents]
 
