@@ -13,15 +13,6 @@ def init_model(variables_size, hidden_layers, data_type, activation = 'softplus'
                                              data_type, activation)
                                              
     return [encoder, decoder]
-    
-def init_model_las(variables_size, hidden_layers, label_size, \
-        data_type, activation = 'softplus'):
-
-    # first initialise models
-    encoder, decoder = construct_las_autoencoder_supervised( \
-        variables_size, hidden_layers, label_size, data_type, activation)
-                                             
-    return [encoder, decoder]
 
 def init_prior_gaussian(output_size, mu = 0.0, sigma = 1.0):
     prior = Gaussian_diag(output_size, mu, sigma)
