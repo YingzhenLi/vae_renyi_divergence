@@ -82,9 +82,9 @@ def init_optimizer(models, input_size, batch_size = 100, num_samples = 1, **kwar
     encoder = models[0]; decoder = models[1]
     # vae
     if 'alpha' not in kwargs:
-        alpha = kwargs['alpha']
-    else:
         alpha = 1.0
+    else:
+        alpha = kwargs['alpha']
     if 'backward_pass' not in kwargs:
         backward_pass = 'full'
     else:
