@@ -50,7 +50,7 @@ def variational_lowerbound(x, encoder, decoder, num_samples, batch_size, \
         logF = tf.reshape(logF, [num_samples, batch_size])
         logF = logF * (1 - alpha)   
         logF_max = tf.reduce_max(logF, 0)           
-        logF = tf.log(tf.clip_by_value(tf.reduce_sum(tf.exp(logF - logF_max), 0), 1e-9, np.inf))
+        logF = tf.log(tf.clip_by_value(tf.reduce_mean(tf.exp(logF - logF_max), 0), 1e-9, np.inf))
         logF = (logF + logF_max) / (1 - alpha)
         lowerbound = tf.reduce_mean(logF)
     return lowerbound#, logpz, logpxz, logqzx
