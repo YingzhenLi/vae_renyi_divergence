@@ -31,7 +31,12 @@ def main(dataset, dimZ, hidden_layers, n_iters, learning_rate = 0.0005, \
     if loss == 'vae':
         kwargs = {'alpha': alpha, 'backward_pass': backward_pass}
         print 'training model: variational auto-encoder' 
-        from models.vae import init_optimizer       
+        if backward_pass == 'max':
+            print 'back propagating only 1 sample: using the max trick'
+            from models.vrmax import init_optimizer
+        else:
+            print 'back propagating all the samples'
+            from models.vae import init_optimizer       
 
     models = init_model(variables_size, hidden_layers, data_type, activation)
     prior = init_prior_gaussian(variables_size[-1])
