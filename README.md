@@ -1,9 +1,10 @@
 # Renyi divergence variational inference applied to variational auto-encoders
-
-# Update 1: 09 Sept 2016
+====================================================
+**Update 1: 09 Sept 2016**
 
 Recently I found that the previous naive implementation in vae.py does not give you time savings with the max trick, when compared to my internel use numpy version. This is probably because tensorflow/theano does not automatically recognize not to compute the gradients of the samples I dropped. 
-So as a temporay update I provide a dirty solution (see vrmax.py) that collects the max-weight samples and repeats the VAE procedure for them. Yes I know it's far from optimized, but at least it already gives you ~2x speed-up on CPUs (and maybe 1.5x~1.7x on GPUs depending on your settings).
+
+So as a temporary update I provide a dirty solution (see vrmax.py) that collects the max-weight samples and repeats the VAE procedure for them. Yes I know it's far from optimized, but at least it already gives you ~2x speed-up on CPUs (and maybe 1.5x~1.7x on GPUs depending on your settings).
 
 Will come back to this issue -- stay tuned! 
 
