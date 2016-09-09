@@ -1,5 +1,5 @@
 # Renyi divergence variational inference applied to variational auto-encoders
-====================================================
+
 **Update 1: 09 Sept 2016**
 
 Recently I found that the previous naive implementation in vae.py does not give you time savings with the max trick, when compared to my internel use numpy version. This is probably because tensorflow/theano does not automatically recognize not to compute the gradients of the samples I dropped. 
